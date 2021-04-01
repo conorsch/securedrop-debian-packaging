@@ -35,3 +35,6 @@ if [[ "$wheel_mime_types" != "application/zip" ]]; then
     git checkout bootstrap/ localwheels/
     git lfs fetch
 fi
+
+# Install the 'build' tool from previously prepared localwheels
+pip install --require-hashes --no-index --no-deps --no-cache-dir -r build-requirements.txt --find-links ./bootstrap/
